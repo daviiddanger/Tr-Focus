@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+:root{
+    --x:50%;
+    --y: 50%;
+    --blur:0.7vmax;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    background-color: black;
+    overscroll-behavior-x: none ;
+    overscroll-behavior-y: none;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: "Lexend", sans-serif;
+    text-align: center;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    z-index: 1;
+}
+h1{
+    font-size: max(10vw,60px);
+    color: #fff;
+}
+
+#bg, 
+#bg-mask{
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+margin: calc(var(--blur)* -1);
+background: url(https://r4.wallpaperflare.com/wallpaper/146/872/985/baby-groot-groot-5k-hd-wallpaper-05c3235bbd481d4ba516695d0bcff1c9.jpg)
+no-repeat center/cover;
+}
+#bg{
+    filter: blur(var(--blur));
+}
+#bg-mask{
+    mask-image: radial-gradient(
+        circle 50vmin at var(--x) var(--y),
+        black 20vmin,
+        transparent
+    );
+}
